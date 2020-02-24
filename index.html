@@ -1,0 +1,82 @@
+<html>
+<head>
+ <style>
+     body{
+         background-color: black;
+     }
+     h1{
+         font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+         color: red;
+     }
+     #display{
+         color:red;
+         font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+     }
+     #equalto{
+         color:red;
+         font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+     }
+ </style>
+</head>
+<body>
+    <center>
+        <h1>
+        Calculator
+        </h1>
+    </center>
+    <br>
+    <br>
+    <center>
+        <input type="number" id="num1" placeholder="Number 1"> <div id="equalto"> + </div>
+        <input type="number" id="num2" placeholder="Number 2">
+        <br>
+        <select id="operate">
+            <option value="+" id="plus">+</option>
+            <option value="-" id="minus">-</option>
+            <option value="*" id="multiply">X</option>
+            <option value="/" id="divide">/</option>
+        </select>
+        <br>
+        <button onclick="sum()">Get Answer</button>
+        <p id="display"></p>
+    </center>
+    <script>
+       function sum(){
+           var num1 = parseInt(document.getElementById("num1").value);
+           var num2 = parseInt(document.getElementById("num2").value);
+           var operate = document.getElementById("operate").value;
+
+           var plus = document.getElementById("plus").value;
+
+           if(operate === plus){
+             var ans = num1 + num2;
+             document.getElementById("equalto").innerHTML = ("+");
+           }
+
+           var minus = document.getElementById("minus").value;
+
+           if(operate === minus){
+             var ans = num1 - num2;
+             document.getElementById("equalto").innerHTML = ("-");
+           }
+
+           var multiply = document.getElementById("multiply").value;
+
+           if(operate === multiply){
+             var ans = num1 * num2;
+             document.getElementById("equalto").innerHTML = ("X");
+           }
+
+           var divide = document.getElementById("divide").value;
+
+           if(operate === divide){
+             var ans = num1 / num2;
+             document.getElementById("equalto").innerHTML = ("/");
+           }
+               
+           document.getElementById("display").innerHTML = ("Your Answer is "+ ans);
+           console.log(ans);
+           }
+    </script>
+</body>
+</html>
